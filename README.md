@@ -30,10 +30,9 @@ ldapsearch -v -h <apacheds-ip> -p 10389 -x -D uid=admin,ou=system -w secret -b d
 將 ldif 檔匯入 OpenLDAP
 
 ```sh
+# 匯入指令會需要執行好幾次, 因為在建立時 parent 不存在會跳過不會自動建立, 因此總共有幾層就要執行幾次
 ldapadd -v -h <openldap-ip> -p 10389 -x -D cn=admin,dc=example,dc=com -w secret -f my.ldif -c > /dev/null 2>&1
 ```
-
-> 這個 import 指令會需要執行好幾次, 因為在建立時 parent 不存在會跳過不會自動建立
 
 驗證方式為, 查詢 ApacheDS 總 entries 數量:
 
