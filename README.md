@@ -9,6 +9,10 @@ docker pull osixia/openldap:1.2.4
 可以透過已寫好的 [docker-compsoe.yml](https://github.com/softleader/openldap/blob/master/docker-compose.yml) 開啟
 
 ```sh
+# download yaml
+curl https://raw.githubusercontent.com/softleader/openldap/master/docker-compose.yml -sSLo docker-compose.yml
+
+# start openldap
 docker-compose up -d
 ```
 
