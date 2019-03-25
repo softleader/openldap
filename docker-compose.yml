@@ -1,0 +1,23 @@
+version: '2'
+services:
+  openldap:
+    image: osixia/openldap:1.2.4
+    environment:
+      LDAP_LOG_LEVEL: "256"
+      LDAP_ORGANISATION: "SoftLeader"
+      LDAP_DOMAIN: "exmaple.com"
+      LDAP_BASE_DN: ""
+      LDAP_ADMIN_PASSWORD: "secret"
+      LDAP_CONFIG_PASSWORD: "config"
+      LDAP_READONLY_USER: "false"
+      LDAP_RFC2307BIS_SCHEMA: "false"
+      LDAP_BACKEND: "mdb"
+      LDAP_TLS: "false"
+      LDAP_REPLICATION: "false"
+      KEEP_EXISTING_CONFIG: "true"
+    volumes:
+      - ./data:/var/lib/ldap
+      - ./config:/etc/ldap/slapd.d
+    ports:
+      - "10389:389"
+      - "10636:636"
