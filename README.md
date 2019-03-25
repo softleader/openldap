@@ -6,11 +6,19 @@
 docker pull osixia/openldap:1.2.4
 ```
 
-- Search
+可以透過已寫好的 [docker-compsoe.yml](https://github.com/softleader/openldap/blob/master/docker-compose.yml) 開啟
+
+```sh
+docker-compose up -d
+```
+
+驗證連線是否正常:
 
 ```sh
 ldapsearch -h localhost -p 10389 -x -D cn=admin,dc=example,dc=com -w secret -b dc=example,dc=com
 ```
+
+> 在 OpenLDAP 中預設的 Bind DN 為 `cn=admin,${LDAP_BASE_DN}
 
 ## Migration from ApacheDS to OpenLDAP
 
