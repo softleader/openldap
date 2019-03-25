@@ -15,10 +15,9 @@ docker-compose up -d
 驗證連線是否正常:
 
 ```sh
+# 在 OpenLDAP 中預設的 Bind DN 為 `cn=admin,${LDAP_BASE_DN}`
 ldapsearch -h localhost -p 10389 -x -D cn=admin,dc=example,dc=com -w secret -b dc=example,dc=com
 ```
-
-> 在 OpenLDAP 中預設的 Bind DN 為 `cn=admin,${LDAP_BASE_DN}
 
 ## Migration from ApacheDS to OpenLDAP
 
