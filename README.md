@@ -32,7 +32,7 @@ ldapadd -v -h <openldap-ip> -p 10389 -x -D cn=admin,dc=example,dc=com -w secret 
 
 ```sh
 ldapsearch -h <apacheds-ip> -p 10389 -x -D uid=admin,ou=system -w secret -b dc=example,dc=com
-# 找到最下面
+# 找到最下面, 如
 # numEntries: 12007
 ```
 
