@@ -21,3 +21,4 @@ services:
     ports:
       - "10389:389"
       - "10636:636"
+    restart: always
