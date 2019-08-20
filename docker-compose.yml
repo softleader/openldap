@@ -5,7 +5,7 @@ services:
     environment:
       LDAP_LOG_LEVEL: "256"
       LDAP_ORGANISATION: "SoftLeader"
-      LDAP_DOMAIN: "exmaple.com"
+      LDAP_DOMAIN: "example.com"
       LDAP_BASE_DN: ""
       LDAP_ADMIN_PASSWORD: "secret"
       LDAP_CONFIG_PASSWORD: "config"
